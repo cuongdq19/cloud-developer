@@ -105,6 +105,9 @@ functions:
     handler: src/lambda/http/createTodo.handler
     events:
       - http:
+          documentation:
+            requestModels:
+              'application/json': CreateTodoModel
           method: post
           path: todos
           cors: true
@@ -123,6 +126,9 @@ functions:
     handler: src/lambda/http/updateTodo.handler
     events:
       - http:
+          documentation:
+            requestModels:
+              'application/json': UpdateTodoModel
           method: patch
           path: todos/{todoId}
           cors: true
